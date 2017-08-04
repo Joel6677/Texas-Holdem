@@ -10,4 +10,4 @@ Kortti
 * sököttää
 * luovuttaa
 
-![Alt text](/Texas-Holdem/dokumentaatio/Luokkakaavio.jpg)
+![Alt text](home/hejoel/Desktop/Texas-Holdem/dokumentaatio/Luokkakaavio.jpg)

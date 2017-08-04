@@ -4,4 +4,4 @@ Pelissä pelaajille jaetaan satunnaisesti kaksi korttia. Pelaaja voi katsoa, sö
 #Dokumentaatio
 [aiheen kuvaus](dokumentaatio/aiheenKuvausJaRakenne.md)
 [pit raportti](dokumentaatio/pit)
-[checkstyle raportti](dokumentaatio/site)
+[checkstyle raportti](dokumentaatio/checkstyle)
