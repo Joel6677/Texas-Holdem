@@ -9,3 +9,5 @@ Kortti
 * nostaa panosta
 * sököttää
 * luovuttaa
+
+![Alt text](/Texas-Holdem/dokumentaatio/Luokkakaavio.jpg)
