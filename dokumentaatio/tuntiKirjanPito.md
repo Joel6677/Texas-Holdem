@@ -1,6 +1,7 @@
 ### Tuntikirjanpito
 Päivä | Tunnit | Kuvaus
 ----- | ---- | ----
+8.8.2017 | 1h | Aiheen kuvauksen parantelua, gitignoreen *~ lisäys sekä aiheen suunnittelua. 
 04.08.2017 | 4h | JUnit-testit, Deadlinen tehtävien teko
 03.08.2017 | 6h | Koodaus, JUnit-testien tekeminen
 01.08.2017 | 1,5h | Koodin tekeminen
