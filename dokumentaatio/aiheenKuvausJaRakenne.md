@@ -3,7 +3,7 @@ Texas hold'em on korttipeli, jossa pelaajia on yleensä pöydässä 2-10. Peliss
 # Käyttäjät:
 Pelaajat
 # Kohde:
-## Kortit:
+# Kortit:
 ### Maat: PATA, RISTI, RUUTU, HERTTA
 ### Kortit arvojärsetyksessä: ÄSSÄ, KAKKONEN, KOLMONEN, NELONEN, VIITONEN, KUUTONEN, SEISKA, KASI, YSI, KYMPPI, JÄTKÄ, AKKA, KURKO, (ÄSSÄ)
 ### Kädet arvojärjestyksessä huonoimmasta parhaimpaan: HAI, PARI, KAKSI PARIA, KOLMOSET, SUORA, VÄRI, TÄYSKÄSI, NELOSET, VÄRISUORA, KUNINGASVÄRISUORA
