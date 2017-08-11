@@ -3,5 +3,5 @@ Pelissä pelaajille jaetaan satunnaisesti kaksi korttia. Pelaaja voi katsoa, sö
 
 # Dokumentaatio
 [aiheen kuvaus](dokumentaatio/aiheenKuvausJaRakenne.md)
-[pit-raportti](https://htmlpreview.github.io/?https://github.com/Joel6677/javalabra/blob/master/dokumentaatio/pit/index.html)
-[CheckStyle-raportti](https://htmlpreview.github.io/?https://github.com/Joel6677/javalabra/blob/master/dokumentaatio/checkstyle/checkstyle.html)
+[pit-raportti](https://htmlpreview.github.io/?https://github.com/Joel6677/Texas-Holdem/blob/master/dokumentaatio/pit/index.html)
+[CheckStyle-raportti](https://htmlpreview.github.io/?https://github.com/Joel6677/Texas-Holdem/blob/master/dokumentaatio/checkstyle/checkstyle.html)
