@@ -85,7 +85,6 @@ public class KasiEvaluointi5Huonointa {
 //        }
 //        return onKaksiParia;
 //    }
-
     public boolean onPari(Kortti[] flop, Kortti[] pelaajanKasi) {
         Kortti[] allCards = Stream.concat(Arrays.stream(flop), Arrays.stream(pelaajanKasi))
                 .toArray(Kortti[]::new);

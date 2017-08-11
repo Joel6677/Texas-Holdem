@@ -8,7 +8,7 @@ package texasholdem.model;
 import java.util.Arrays;
 import java.util.Comparator;
 import java.util.stream.Stream;
-import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.*;
 import org.junit.Test;
 import texasholdem.model.Kortti;
 
@@ -19,7 +19,7 @@ import texasholdem.model.Kortti;
 public class KasiEvaluointi5HuonointaTest {
 
     @Test
-    public void tomiikoOnSuora() {
+    public void tomiikoOnSuoraTrue() {
         KasiEvaluointi5Huonointa kasi = new KasiEvaluointi5Huonointa();
         Kortti[] flop = new Kortti[5];
         flop[0] = new Kortti(Kortti.Sijoitus.AKKA, Kortti.Maa.PATA);
@@ -32,9 +32,24 @@ public class KasiEvaluointi5HuonointaTest {
         pelaajanKasi[1] = new Kortti(Kortti.Sijoitus.KYMPPI, Kortti.Maa.PATA);
         assertEquals(true, kasi.onSuora(flop, pelaajanKasi));
     }
+    
+    @Test
+    public void tomiikoOnSuoraFalse() {
+        KasiEvaluointi5Huonointa kasi = new KasiEvaluointi5Huonointa();
+        Kortti[] flop = new Kortti[5];
+        flop[0] = new Kortti(Kortti.Sijoitus.KURKO, Kortti.Maa.PATA);
+        flop[1] = new Kortti(Kortti.Sijoitus.KURKO, Kortti.Maa.PATA);
+        flop[2] = new Kortti(Kortti.Sijoitus.KYMPPI, Kortti.Maa.PATA);
+        flop[3] = new Kortti(Kortti.Sijoitus.YHDEKSÄN, Kortti.Maa.RUUTU);
+        flop[4] = new Kortti(Kortti.Sijoitus.KURKO, Kortti.Maa.RISTI);
+        Kortti[] pelaajanKasi = new Kortti[2];
+        pelaajanKasi[0] = new Kortti(Kortti.Sijoitus.JÄTKÄ, Kortti.Maa.PATA);
+        pelaajanKasi[1] = new Kortti(Kortti.Sijoitus.KYMPPI, Kortti.Maa.PATA);
+        assertFalse(kasi.onSuora(flop, pelaajanKasi));
+    }
 
     @Test
-    public void tomiikoOnKolmoset() {
+    public void tomiikoOnKolmosetTrue() {
         KasiEvaluointi5Huonointa kasi = new KasiEvaluointi5Huonointa();
         Kortti[] flop = new Kortti[5];
         flop[0] = new Kortti(Kortti.Sijoitus.AKKA, Kortti.Maa.PATA);
@@ -47,6 +62,22 @@ public class KasiEvaluointi5HuonointaTest {
         pelaajanKasi[1] = new Kortti(Kortti.Sijoitus.KYMPPI, Kortti.Maa.PATA);
 
         assertEquals(true, kasi.onKolmoset(flop, pelaajanKasi));
+    }
+    
+      @Test
+    public void tomiikoOnKolmosetFalse() {
+        KasiEvaluointi5Huonointa kasi = new KasiEvaluointi5Huonointa();
+        Kortti[] flop = new Kortti[5];
+        flop[0] = new Kortti(Kortti.Sijoitus.JÄTKÄ, Kortti.Maa.PATA);
+        flop[1] = new Kortti(Kortti.Sijoitus.AKKA, Kortti.Maa.PATA);
+        flop[2] = new Kortti(Kortti.Sijoitus.AKKA, Kortti.Maa.PATA);
+        flop[3] = new Kortti(Kortti.Sijoitus.YHDEKSÄN, Kortti.Maa.RUUTU);
+        flop[4] = new Kortti(Kortti.Sijoitus.KURKO, Kortti.Maa.RISTI);
+        Kortti[] pelaajanKasi = new Kortti[2];
+        pelaajanKasi[0] = new Kortti(Kortti.Sijoitus.JÄTKÄ, Kortti.Maa.PATA);
+        pelaajanKasi[1] = new Kortti(Kortti.Sijoitus.KYMPPI, Kortti.Maa.PATA);
+
+        assertFalse(kasi.onKolmoset(flop, pelaajanKasi));
     }
 
     @Test

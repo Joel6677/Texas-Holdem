@@ -36,11 +36,8 @@ public class Pakka {
 //            table.put(maa, suitTable);
 //        }
 //    }
-
     public ArrayList<Kortti> getPakka() {
-        if (pakka.isEmpty()) {
-            throw new IllegalArgumentException();
-        }
+
         for (Kortti kortti : pakka) {
             if (kortti == null) {
                 throw new IllegalArgumentException();
@@ -61,5 +58,4 @@ public class Pakka {
 //            System.out.println(pakka.get(i));
 //        }
 //    }
-
 }

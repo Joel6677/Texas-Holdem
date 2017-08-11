@@ -8,7 +8,9 @@ package texasholdem.model;
 import java.util.Arrays;
 import java.util.Comparator;
 import java.util.stream.Stream;
-import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.*;
+import org.junit.Before;
+import org.junit.BeforeClass;
 import org.junit.Test;
 import texasholdem.model.Kortti;
 
@@ -18,9 +20,9 @@ import texasholdem.model.Kortti;
  */
 public class KasiEvaluointi5ParastaTest {
     
-  
-     @Test
-    public void tomiikoOnKuningasvärisuora() {
+
+    @Test
+    public void tomiikoOnKuningasvärisuoraTrue() {
         KasiEvaluointi5Parasta kasi = new KasiEvaluointi5Parasta();
         Kortti[] flop = new Kortti[5];
         flop[0] = new Kortti(Kortti.Sijoitus.ÄSSÄ, Kortti.Maa.PATA);
@@ -30,8 +32,23 @@ public class KasiEvaluointi5ParastaTest {
         flop[4] = new Kortti(Kortti.Sijoitus.KURKO, Kortti.Maa.RISTI);
         Kortti[] pelaajanKäsi = new Kortti[2];
         pelaajanKäsi[0] = new Kortti(Kortti.Sijoitus.JÄTKÄ, Kortti.Maa.PATA);
-        pelaajanKäsi[1] = new Kortti(Kortti.Sijoitus.KYMPPI, Kortti.Maa.PATA);    
-        assertEquals(true, kasi.onKuningasvarisuora(flop,pelaajanKäsi));
+        pelaajanKäsi[1] = new Kortti(Kortti.Sijoitus.KYMPPI, Kortti.Maa.PATA);
+        assertEquals(true, kasi.onKuningasvarisuora(flop, pelaajanKäsi));
+    }
+
+    @Test
+    public void tomiikoOnKuningasvärisuoraFalse() {
+        KasiEvaluointi5Parasta kasi = new KasiEvaluointi5Parasta();
+        Kortti[] flop = new Kortti[5];
+        flop[0] = new Kortti(Kortti.Sijoitus.ÄSSÄ, Kortti.Maa.RUUTU);
+        flop[1] = new Kortti(Kortti.Sijoitus.KURKO, Kortti.Maa.PATA);
+        flop[2] = new Kortti(Kortti.Sijoitus.AKKA, Kortti.Maa.PATA);
+        flop[3] = new Kortti(Kortti.Sijoitus.KAKSI, Kortti.Maa.RUUTU);
+        flop[4] = new Kortti(Kortti.Sijoitus.KURKO, Kortti.Maa.RISTI);
+        Kortti[] pelaajanKäsi = new Kortti[2];
+        pelaajanKäsi[0] = new Kortti(Kortti.Sijoitus.JÄTKÄ, Kortti.Maa.PATA);
+        pelaajanKäsi[1] = new Kortti(Kortti.Sijoitus.KYMPPI, Kortti.Maa.PATA);
+        assertFalse(kasi.onKuningasvarisuora(flop, pelaajanKäsi));
     }
 
     @Test
@@ -45,11 +62,11 @@ public class KasiEvaluointi5ParastaTest {
         flop[4] = new Kortti(Kortti.Sijoitus.KURKO, Kortti.Maa.RISTI);
         Kortti[] pelaajanKäsi = new Kortti[2];
         pelaajanKäsi[0] = new Kortti(Kortti.Sijoitus.JÄTKÄ, Kortti.Maa.PATA);
-        pelaajanKäsi[1] = new Kortti(Kortti.Sijoitus.KYMPPI, Kortti.Maa.PATA);       
-        assertEquals(true, kasi.onVari(flop,pelaajanKäsi));
+        pelaajanKäsi[1] = new Kortti(Kortti.Sijoitus.KYMPPI, Kortti.Maa.PATA);
+        assertEquals(true, kasi.onVari(flop, pelaajanKäsi));
     }
-    
-     @Test
+
+    @Test
     public void toimiikoOnNeloset() {
         KasiEvaluointi5Parasta kasi = new KasiEvaluointi5Parasta();
         Kortti[] flop = new Kortti[5];
@@ -63,7 +80,7 @@ public class KasiEvaluointi5ParastaTest {
         pelaajanKäsi[1] = new Kortti(Kortti.Sijoitus.KYMPPI, Kortti.Maa.PATA);
         assertEquals(true, kasi.onNeloset(flop, pelaajanKäsi));
     }
-    
+
     @Test
     public void toimiikoOnTayskasi() {
         KasiEvaluointi5Parasta kasi = new KasiEvaluointi5Parasta();
@@ -73,15 +90,14 @@ public class KasiEvaluointi5ParastaTest {
         pokerikäsi[2] = new Kortti(Kortti.Sijoitus.ÄSSÄ, Kortti.Maa.PATA);
         pokerikäsi[3] = new Kortti(Kortti.Sijoitus.KAKSI, Kortti.Maa.RUUTU);
         pokerikäsi[4] = new Kortti(Kortti.Sijoitus.ÄSSÄ, Kortti.Maa.RISTI);
-   
+
         Kortti[] kädenKortit = new Kortti[2];
         kädenKortit[0] = new Kortti(Kortti.Sijoitus.KAKSI, Kortti.Maa.PATA);
-        kädenKortit[1] = new Kortti(Kortti.Sijoitus.KYMPPI, Kortti.Maa.PATA);          
-        assertEquals(true, kasi.onTayskasi(pokerikäsi,kädenKortit));
-    
-      
+        kädenKortit[1] = new Kortti(Kortti.Sijoitus.KYMPPI, Kortti.Maa.PATA);
+        assertEquals(true, kasi.onTayskasi(pokerikäsi, kädenKortit));
+
     }
-    
+
     @Test
     public void toimiikoOnVarisuora() {
         KasiEvaluointi5Parasta kasi = new KasiEvaluointi5Parasta();
@@ -94,10 +110,7 @@ public class KasiEvaluointi5ParastaTest {
         Kortti[] pelaajanKasi = new Kortti[2];
         pelaajanKasi[0] = new Kortti(Kortti.Sijoitus.JÄTKÄ, Kortti.Maa.PATA);
         pelaajanKasi[1] = new Kortti(Kortti.Sijoitus.KYMPPI, Kortti.Maa.PATA);
-        assertEquals(true, kasi.onVarisuora(flop,pelaajanKasi));
+        assertEquals(true, kasi.onVarisuora(flop, pelaajanKasi));
     }
 
-    
 }
-    
-

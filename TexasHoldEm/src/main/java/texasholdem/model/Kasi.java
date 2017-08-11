@@ -46,7 +46,7 @@ public class Kasi {
         if (kasi == null) {
             throw new IllegalArgumentException();
         }
-        
+
         this.kasi = kasi;
     }
 
@@ -55,17 +55,16 @@ public class Kasi {
 //            System.out.println(k);
 //        }
 //    }
-    
     public void setKasiSijoitus(KasiSijoitus kasiSijoitus) {
         this.kasiSijoitus = kasiSijoitus;
     }
-    
+
     public KasiSijoitus getKasiSijoitus() {
-        
+
         if (kasiSijoitus == null) {
             throw new IllegalArgumentException();
         }
-        
+
         return kasiSijoitus;
     }
 

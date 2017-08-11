@@ -9,6 +9,4 @@ import texasholdem.model.Kasi.KasiSijoitus;
 
 public class TexasHoldEm {
 
-
-    
 }
