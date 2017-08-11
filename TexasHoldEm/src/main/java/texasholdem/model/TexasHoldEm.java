@@ -5,10 +5,10 @@
  */
 package texasholdem.model;
 
-/**
- *
- * @author hejoel
- */
+import texasholdem.model.Kasi.KasiSijoitus;
+
 public class TexasHoldEm {
 
+
+    
 }
