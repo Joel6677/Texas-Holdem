@@ -56,35 +56,35 @@ public class KasiEvaluointi5Huonointa {
         return false;
     }
 
-    public boolean onKaksiParia(Kortti[] flop, Kortti[] pelaajanKasi) {
-        Kortti[] kaikkiKortit = Stream.concat(Arrays.stream(flop), Arrays.stream(pelaajanKasi))
-                .toArray(Kortti[]::new);
-        int samojaKortteja = 1;
-        int samojenKorttejenMaara = 0;
-        boolean onKaksiParia = false;
-        int i = 0;
-        int k = i + 1;
-        while (i < kaikkiKortit.length && !onKaksiParia) {
-            samojaKortteja = 1;
-            while (k < kaikkiKortit.length && !onKaksiParia) {
-                if (kaikkiKortit[i].getSijoitus().getArvo() == kaikkiKortit[k].getSijoitus().getArvo()) {
-                    samojaKortteja++;
-                    if (samojaKortteja == 2) {
-                        samojaKortteja = 1;
-                        samojenKorttejenMaara++;
-                        if (samojenKorttejenMaara == 2) {
-                            onKaksiParia = true;
-
-                        }
-                    }
-
-                }
-                k++;
-            }
-            i++;
-        }
-        return onKaksiParia;
-    }
+//    public boolean onKaksiParia(Kortti[] flop, Kortti[] pelaajanKasi) {
+//        Kortti[] kaikkiKortit = Stream.concat(Arrays.stream(flop), Arrays.stream(pelaajanKasi))
+//                .toArray(Kortti[]::new);
+//        int samojaKortteja = 1;
+//        int samojenKorttejenMaara = 0;
+//        boolean onKaksiParia = false;
+//        int i = 0;
+//        int k = i + 1;
+//        while (i < kaikkiKortit.length && !onKaksiParia) {
+//            samojaKortteja = 1;
+//            while (k < kaikkiKortit.length && !onKaksiParia) {
+//                if (kaikkiKortit[i].getSijoitus().getArvo() == kaikkiKortit[k].getSijoitus().getArvo()) {
+//                    samojaKortteja++;
+//                    if (samojaKortteja == 2) {
+//                        samojaKortteja = 1;
+//                        samojenKorttejenMaara++;
+//                        if (samojenKorttejenMaara == 2) {
+//                            onKaksiParia = true;
+//
+//                        }
+//                    }
+//
+//                }
+//                k++;
+//            }
+//            i++;
+//        }
+//        return onKaksiParia;
+//    }
 
     public boolean onPari(Kortti[] flop, Kortti[] pelaajanKasi) {
         Kortti[] allCards = Stream.concat(Arrays.stream(flop), Arrays.stream(pelaajanKasi))

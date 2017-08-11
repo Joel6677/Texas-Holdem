@@ -136,4 +136,12 @@ public class PakkaTest {
         assertEquals(false, onkoSama);
     }
 
+    @Test
+    public void getPakkaToimii() {
+        Pakka pakka = new Pakka();
+        pakka.luoPakka();
+        Kortti kortti = pakka.getPakka().get(5);
+        assertEquals(kortti, pakka.getPakka().get(5));
+    }
+
 }

@@ -27,18 +27,26 @@ public class Pakka {
         }
     }
 
-    public void luoTaulu() {
-        for (Maa maa : Maa.values()) {
-            Map<Sijoitus, Kortti> suitTable = new EnumMap<Sijoitus, Kortti>(Sijoitus.class);
-            for (Sijoitus sijoitus : Sijoitus.values()) {
-                suitTable.put(sijoitus, new Kortti(sijoitus, maa));
-            }
-            table.put(maa, suitTable);
-        }
-    }
+//    public void luoTaulu() {
+//        for (Maa maa : Maa.values()) {
+//            Map<Sijoitus, Kortti> suitTable = new EnumMap<Sijoitus, Kortti>(Sijoitus.class);
+//            for (Sijoitus sijoitus : Sijoitus.values()) {
+//                suitTable.put(sijoitus, new Kortti(sijoitus, maa));
+//            }
+//            table.put(maa, suitTable);
+//        }
+//    }
 
     public ArrayList<Kortti> getPakka() {
-        return new ArrayList<Kortti>(pakka); // Return copy of prototype deck
+        if (pakka.isEmpty()) {
+            throw new IllegalArgumentException();
+        }
+        for (Kortti kortti : pakka) {
+            if (kortti == null) {
+                throw new IllegalArgumentException();
+            }
+        }
+        return new ArrayList<Kortti>(pakka);
     }
 
     public void sekoitaPakka() {
@@ -48,10 +56,10 @@ public class Pakka {
 //    public Kortti valueOf(Arvo arvo, Maa maa) {
 //        return table.get(maa).get(arvo);
 //    }
-    public void printPakka() {
-        for (int i = 0; i < pakka.size(); i++) {
-            System.out.println(pakka.get(i));
-        }
-    }
+//    public void printPakka() {
+//        for (int i = 0; i < pakka.size(); i++) {
+//            System.out.println(pakka.get(i));
+//        }
+//    }
 
 }

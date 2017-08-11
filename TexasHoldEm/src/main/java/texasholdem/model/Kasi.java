@@ -34,16 +34,19 @@ public class Kasi {
     }
 
     public Kortti[] getKasi() {
-        try {
-            if (this.kasi == null);
-        } catch (NullPointerException e) {
-            System.out.println("null");
+
+        if (this.kasi == null) {
+            throw new IllegalArgumentException();
         }
         return this.kasi;
 
     }
 
     public void setKasi(Kortti[] kasi) {
+        if (kasi == null) {
+            throw new IllegalArgumentException();
+        }
+        
         this.kasi = kasi;
     }
 
@@ -52,8 +55,17 @@ public class Kasi {
 //            System.out.println(k);
 //        }
 //    }
-    public KasiSijoitus kasiSijoitus() {
-       
+    
+    public void setKasiSijoitus(KasiSijoitus kasiSijoitus) {
+        this.kasiSijoitus = kasiSijoitus;
+    }
+    
+    public KasiSijoitus getKasiSijoitus() {
+        
+        if (kasiSijoitus == null) {
+            throw new IllegalArgumentException();
+        }
+        
         return kasiSijoitus;
     }
 
@@ -99,7 +111,7 @@ public class Kasi {
 //    }
     public Kortti getHaiKadesta() {
         Arrays.sort(kasi, sijoituksenMukaan);
-        return kasi[0];
+        return kasi[kasi.length - 1];
     }
 
     public String toString() {

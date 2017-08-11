@@ -8,7 +8,7 @@ import texasholdem.model.Kortti;
 import texasholdem.model.Kasi;
 
 public class KasiTest {
-    
+
     Kasi kasi;
     Kortti[] pelaajanKasi;
     Kortti[] flop;
@@ -20,7 +20,6 @@ public class KasiTest {
     Kortti kortti5;
     Kortti kortti6;
     Kortti kortti7;
-            
 
     @Before
     public void setUp() {
@@ -44,12 +43,12 @@ public class KasiTest {
         flop[2] = kortti5;
         flop[3] = kortti6;
         flop[4] = kortti7;
-        
+
     }
 
     @Test
     public void listassaKymmenenKatta() {
-        
+
         kasi.lisaaKadet();
         assertEquals(10, kasi.lista.size());
     }
@@ -62,6 +61,7 @@ public class KasiTest {
         assertEquals("Kortti{sijoitus=VIISI, maa=PATA}" + " ja " + "Kortti{sijoitus=KUUSI, maa=PATA}", kasi.toString());
 
     }
+
     @Test
     public void getKasiOikein() {
 
@@ -70,19 +70,34 @@ public class KasiTest {
         Assert.assertArrayEquals(pelaajanKasi, kasi.getKasi());
 
     }
+
     @Test
     public void setKasiOikein() {
 
         kasi.setKasi(pelaajanKasi);
         Assert.assertArrayEquals(pelaajanKasi, kasi.getKasi());
     }
+
     @Test
     public void getHaiKadestaToimii() {
+        
+        Kortti[] pelaajanKasi2 = new Kortti[2];
+        Kortti kortti = new Kortti(Kortti.Sijoitus.KYMPPI, Kortti.Maa.PATA);
+        Kortti kortti2 = new Kortti(Kortti.Sijoitus.KAKSI, Kortti.Maa.PATA);
+        
+        pelaajanKasi2[0] = kortti;
+        pelaajanKasi2[1] = kortti2;
 
-        kasi.setKasi(pelaajanKasi);
+        kasi.setKasi(pelaajanKasi2);
         assertEquals(kortti, kasi.getHaiKadesta());
     }
-  
+
+    @Test
+    public void getKasiSijoitusToimii() {
+        kasi.setKasiSijoitus(Kasi.KasiSijoitus.Kaksi_paria);
+        assertEquals(Kasi.KasiSijoitus.Kaksi_paria, kasi.getKasiSijoitus());
+    }
+
 //    @Test
 //    public void katsoKasienSijoitusToimiiOikein() {
 //        
@@ -90,5 +105,4 @@ public class KasiTest {
 //        kasi.setKasi(pelaajanKasi);
 //        assertEquals(kasi.kasiSijoitus.Kolmoset, kasi.katsoKasienSijoitus(flop));
 //    }
-
 }
