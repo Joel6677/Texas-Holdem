@@ -1,5 +1,5 @@
 # Texas-Holdem
-Pelissä pelaajille jaetaan satunnaisesti kaksi korttia. Pelaaja voi katsoa, sököttää tai nostaa panosta vuorollaan. Pelaajat maksavat pikku- sekä ison blindin joka kierroksella. Jakaja jakaa ensin kolme avointa korttia (flopin), sitten neljä (turn) ja viimeiseksi 5 avointa korttia eli (riverin). Lopussa parhaan käden omaava pelaaja voittaa ja saa kertyneen potin itselleen.
+Pelissä pelaajalle jaetaan satunnaisesti kaksi korttia. Pelaaja voi katsoa tai foldata. Pelaaja pelaa jakajaa vastaan. Jakaja jakaa ensin kolme avointa korttia (flopin), sitten neljä (turn) ja viimeiseksi 5 avointa korttia eli (riverin). Tämän jälkeen, jos pelaaja voittaa jakajan, hän voittaa potin riippuen kädestä.
 
 # Dokumentaatio
 [aiheen kuvaus](dokumentaatio/aiheenKuvausJaRakenne.md)

@@ -102,7 +102,7 @@ public class TexasHoldEm {
             } else if (!(teko.equals("fold") || teko.equals("lopeta") || teko.equals("call"))) {
                 System.out.println("Error");
                 korttiLaskuri = 0;
-
+                poytaLaskuri = 0;
                 panos = 0;
                 pelaaja.setRahat(100);
                 continue;
@@ -111,9 +111,13 @@ public class TexasHoldEm {
             for (int i = 0; i < 2; i++) {
                 jakaja.setKortti(pakka.getPakka().get(korttiLaskuri++), i);
             }
+            
+            rahat -= panos;
 
             while (teko.equals("call")) {
                 //turn
+                System.out.println("Pelaajan rahat: " + rahat);
+                
                 System.out.println("Jakajan kortit: ");
                 System.out.println(jakaja.toString());
                 
@@ -140,7 +144,7 @@ public class TexasHoldEm {
                     rahat += voittoEvaluointi.getVoitto();
                 } else if (pelaajanKadenArvo == jakajanKadenArvo) {
                     System.out.println("Tasapeli");
-                    rahat += panos;
+                    rahat += panos * 2;
                 } else {
                     System.out.println("Ei voittoa");
                 }
