@@ -36,10 +36,12 @@
                 <version>1.1.8</version>
                 <configuration>
                     <targetClasses>
-                        <param>texasholdem.model.*</param>
+                        <param>texasholdem.model.domain.*</param>
+                        <param>texasholdem.model.evaluointi.*</param>
                     </targetClasses>
                     <targetTests>
-                        <param>texasholdem.model.*</param>
+                        <param>texasholdem.model.domain.*</param>
+                        <param>texasholdem.model.evaluointi.*</param>
                     </targetTests>
                 </configuration>
             </plugin>

@@ -1,7 +1,7 @@
 # Aihe
-Texas hold'em on korttipeli, jossa pelaajia on yleensä pöydässä 2-10. Pelissä käytetään yhtä korttipakkaa, joka sekoitetaan ja jokaiselle pelaajalle jaetaan 2 korttia. Ideana on yhdistää nämä kaksi korttia pöydälle jaettaviin kortteihin ja muodostaa niistä 5 kortin käsi.  Kaksi pelaajaa asettaa pienen- sekä ison sokkopanoksen joka kierroksella. Pelaajat voivat, luovuttaa, katsoa sekä nostaa panosta joka kierroksella. Ensimmäisen kierroksen jälkeen jakaja alkaa jakamaan kortteja pöydälle. Ensin jaetaan 3 korttia (flop), sitten tulee uusi kierros ja sen jälkeen jaetaan neljäs kortti (turn) ja taas uusi kierros ja viimeisellä kerralla jaetaan viides kortti (river) jossa katsotaan pelaajien kortit ja parhaan käden omaava pelaaja voittaa.
+Aiheena on muunnelma Texas Hold'em pelistä. Pelini muistuttaa Casinon holdemia, jota pelataan yksinpelinä jakajaa vastaan. Pelissä pelaaja valitsee ensin panoksen. Seuraavaksi pelissä jaetaan kortit pelaajalle. Nyt pelaajalla on mahdollisuus joko katsoa tai luovuttaa. Katsoessa pelaaja joutuu maksamaan tuplan, mitä on asettanut panokseksi. Jos pelaajalla on parempi käsi, kuin jakajalla, hän voittaa riippuen käden arvosta. Pelissä käytetään yhtä korttipakkaa. Ideana on yhdistää nämä kaksi korttia pöydälle jaettaviin kortteihin ja muodostaa niistä 5 kortin käsi. Ensin pelissä jaetaan 3 korttia (flop), sitten tulee uusi kierros ja sen jälkeen jaetaan neljäs kortti (turn) ja taas uusi kierros ja viimeisellä kerralla jaetaan viides kortti (river).
 # Käyttäjät:
-Pelaajat
+Pelaaja
 # Kohde:
 # Kortit:
 ### Maat: PATA, RISTI, RUUTU, HERTTA
@@ -30,8 +30,7 @@ VÄRI ja SUORA samanaikaisesti
 VÄRISUORA, mutta kortteina KYMPPI, JÄTKÄ, AKKA, KURKO ja ÄSSÄ.
 
 # Pelaajan toiminnot:
-* nostaa panosta
-* sököttää
+* panostaa
 * luovuttaa
 
 ![Luokkakaavio](/dokumentaatio/TexasHoldEmLuokkakaavio.jpg)
