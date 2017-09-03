@@ -5,4 +5,4 @@ Pelissä pelaajille jaetaan satunnaisesti kaksi korttia pakasta. Pelaajat maksav
 [aiheen kuvaus](dokumentaatio/aiheenKuvausJaRakenne.md)
 [pit-raportti](https://htmlpreview.github.io/?https://github.com/Joel6677/Texas-Holdem/blob/master/dokumentaatio/pit/index.html)
 [CheckStyle-raportti](https://htmlpreview.github.io/?https://github.com/Joel6677/Texas-Holdem/blob/master/dokumentaatio/checkstyle/checkstyle.html)
-[JavaDov](https://htmlpreview.github.io/?https://github.com/Joel6677/Texas-Holdem/blob/master/apidocs/index.html)
+[JavaDoc](https://htmlpreview.github.io/?https://github.com/Joel6677/Texas-Holdem/blob/master/apidocs/index.html)
