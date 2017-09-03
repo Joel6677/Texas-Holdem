@@ -1,13 +1,13 @@
 package texasholdem.model.domain;
 
+import java.util.ArrayList;
+import java.util.List;
 import org.junit.Test;
 import static org.junit.Assert.*;
 import texasholdem.model.domain.Kortti;
 import texasholdem.model.domain.Kortti.Sijoitus;
 import texasholdem.model.domain.Kortti.Maa;
 import texasholdem.model.domain.Pakka;
-
-
 
 public class PakkaTest {
 
@@ -66,7 +66,6 @@ public class PakkaTest {
         int ÄssÄt = 0;
 
 //        pakka.luoPakka();
-
         for (int i = 0; i < pakka.pakka.size(); i++) {
             if (pakka.pakka.get(i).getSijoitus().equals(Sijoitus.KAKSI)) {
                 kaksi++;
@@ -137,6 +136,23 @@ public class PakkaTest {
             onkoSama = false;
         }
         assertEquals(false, onkoSama);
+    }
+
+    @Test
+    public void dealToimii() {
+        Pakka pakka = new Pakka();
+
+        assertEquals(pakka.getPakka().get(0), pakka.deal());
+    }
+
+    @Test
+    public void dealToimiiNoOfCards() {
+        Pakka pakka = new Pakka();
+        List<Kortti> jaetutKortit = new ArrayList<Kortti>();
+        jaetutKortit.add(pakka.getPakka().get(0));
+
+        assertEquals(jaetutKortit, pakka.deal(1));
+
     }
 
 }

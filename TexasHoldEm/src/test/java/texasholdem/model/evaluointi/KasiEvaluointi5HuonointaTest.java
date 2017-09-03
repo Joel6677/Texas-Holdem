@@ -1,6 +1,5 @@
 package texasholdem.model.evaluointi;
 
-import texasholdem.model.evaluointi.KasiEvaluointi5Huonointa;
 import java.util.Arrays;
 import java.util.Comparator;
 import java.util.stream.Stream;
@@ -93,20 +92,6 @@ public class KasiEvaluointi5HuonointaTest {
         pelaajanKasi[1] = new Kortti(Kortti.Sijoitus.KYMPPI, Kortti.Maa.PATA);
 
         assertEquals(KasiSijoitus.Pari, kasi.getHuonoKasi(flop, pelaajanKasi));
-    }
-
-    @Test
-    public void toimiikoGetHaiKaikistaKorteista() {
-        KasiEvaluointi5Huonointa kasi = new KasiEvaluointi5Huonointa();
-        Kortti[] flop = new Kortti[3];
-        flop[0] = new Kortti(Kortti.Sijoitus.KOLME, Kortti.Maa.PATA);
-        flop[1] = new Kortti(Kortti.Sijoitus.KAHDEKSAN, Kortti.Maa.RISTI);
-        flop[2] = new Kortti(Kortti.Sijoitus.KYMPPI, Kortti.Maa.PATA);
-     
-        Kortti[] pelaajanKasi = new Kortti[2];
-        pelaajanKasi[0] = new Kortti(Kortti.Sijoitus.JÄTKÄ, Kortti.Maa.PATA);
-        pelaajanKasi[1] = new Kortti(Kortti.Sijoitus.KAKSI, Kortti.Maa.PATA);
-        assertEquals(pelaajanKasi[0], kasi.getHaiKaikistaKorteista(flop, pelaajanKasi));
     }
 
 }

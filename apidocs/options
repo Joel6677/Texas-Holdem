@@ -1,0 +1,22 @@
+-encoding
+'UTF-8'
+-protected
+-sourcepath
+'/home/hejoel/Desktop/Texas-Holdem/TexasHoldEm/src/main/java'
+-author
+-bottom
+'Copyright &#169; 2017. All rights reserved.'
+-charset
+'UTF-8'
+-d
+'/home/hejoel/Desktop/Texas-Holdem/TexasHoldEm/target/site/apidocs'
+-docencoding
+'UTF-8'
+-doctitle
+'TexasHoldEm 1.0-SNAPSHOT API'
+-linkoffline
+'http://docs.oracle.com/javase/8/docs/api' '/home/hejoel/Desktop/Texas-Holdem/TexasHoldEm/target/javadoc-bundle-options'
+-use
+-version
+-windowtitle
+'TexasHoldEm 1.0-SNAPSHOT API'

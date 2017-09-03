@@ -1,6 +1,13 @@
 ### Tuntikirjanpito
 Päivä | Tunnit | Kuvaus
 ----- | ---- | ----
+3.9.2017 | 2h | Deadlinen tehtävien teko
+30.8.2017 | 3h | Deadlinen tehtävien teko
+29.8.2017 | 4h | Graafisen käyttöliittymän teko
+28.8.2017 | 5h | Graafisen käyttöliittymän teko
+24.8.2017 | 3h | Pelin suunnittelu, tehtävien teko
+23.8.2017 | 4h | Graafisen käyttöliittymän teko
+21.8.2017 | 4h | Graafisen käyttöliittymän teko
 18.8.2017 | 4h | Deadlinen tehtävien teko
 17.8.2017 | 5h | Ohjelman koodaus
 16.8.2017 | 4h | Ohjelman koodin parantelu 

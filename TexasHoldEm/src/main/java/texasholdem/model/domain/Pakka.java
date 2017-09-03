@@ -9,16 +9,22 @@ import texasholdem.model.domain.Kortti;
 import texasholdem.model.domain.Kortti.Maa;
 import texasholdem.model.domain.Kortti.Sijoitus;
 
+/**
+ * Luokasssa enumit Maa ja Sijoitus sekä useita luokkia kortille.
+ */
 public class Pakka {
 
     public final List<Kortti> pakka = new ArrayList<Kortti>();
-//    private Map<Maa, Map<Sijoitus, Kortti>> table
-//            = new EnumMap<Maa, Map<Sijoitus, Kortti>>(Maa.class);
+    private Kortti[] kortit;
+    private int nextCardIndex = 0;
 
+    /**
+     * Konstruktori.
+     */
     public Pakka() {
-        
+
         this.luoPakka();
-        
+
     }
 
     private void luoPakka() {
@@ -29,31 +35,52 @@ public class Pakka {
         }
     }
 
-//    public void luoTaulu() {
-//        for (Maa maa : Maa.values()) {
-//            Map<Sijoitus, Kortti> suitTable = new EnumMap<Sijoitus, Kortti>(Sijoitus.class);
-//            for (Sijoitus sijoitus : Sijoitus.values()) {
-//                suitTable.put(sijoitus, new Kortti(sijoitus, maa));
-//            }
-//            table.put(maa, suitTable);
-//        }
-//    }
-
+    /**
+     * Get Pakka.
+     *
+     * @return pakka
+     */
     public ArrayList<Kortti> getPakka() {
-        return new ArrayList<Kortti>(pakka); // Return copy of prototype deck
+        return new ArrayList<Kortti>(pakka);
     }
 
+    /**
+     * Sekoita pakka.
+     */
     public void sekoitaPakka() {
         Collections.shuffle(pakka);
     }
 
-//    public Kortti valueOf(Arvo arvo, Maa maa) {
-//        return table.get(maa).get(arvo);
-//    }
-    public void printPakka() {
-        for (int i = 0; i < pakka.size(); i++) {
-            System.out.println(pakka.get(i));
+    /**
+     * metodi jakajaa kortit.
+     *
+     * @return kortit
+     */
+    public Kortti deal() {
+        if (nextCardIndex + 1 >= 52) {
+            throw new IllegalStateException("Ei kortteja pakassa jäljellä");
         }
+        return pakka.get(nextCardIndex++);
+    }
+
+    /**
+     * metodi jakaa kortit.
+     *
+     * @param noOfCards korttien määrä
+     * @return palauttaa jaetut kortit
+     */
+    public List<Kortti> deal(int noOfCards) {
+        if (noOfCards < 1) {
+            throw new IllegalArgumentException("noOfCards < 1");
+        }
+        if (nextCardIndex + noOfCards >= 52) {
+            throw new IllegalStateException("Ei kortteja pakassa jäljellä");
+        }
+        List<Kortti> dealtCards = new ArrayList<Kortti>();
+        for (int i = 0; i < noOfCards; i++) {
+            dealtCards.add(pakka.get(nextCardIndex++));
+        }
+        return dealtCards;
     }
 
 }

@@ -1,5 +1,8 @@
 # Aihe
-Aiheena on muunnelma Texas Hold'em pelistä. Pelini muistuttaa Casinon holdemia, jota pelataan yksinpelinä jakajaa vastaan. Pelissä pelaaja valitsee ensin panoksen. Seuraavaksi pelissä jaetaan kortit pelaajalle. Nyt pelaajalla on mahdollisuus joko katsoa tai luovuttaa. Katsoessa pelaaja joutuu maksamaan tuplan, mitä on asettanut panokseksi. Jos pelaajalla on parempi käsi, kuin jakajalla, hän voittaa riippuen käden arvosta. Pelissä käytetään yhtä korttipakkaa. Ideana on yhdistää nämä kaksi korttia pöydälle jaettaviin kortteihin ja muodostaa niistä 5 kortin käsi. Ensin pelissä jaetaan 3 korttia (flop), sitten tulee uusi kierros ja sen jälkeen jaetaan neljäs kortti (turn) ja taas uusi kierros ja viimeisellä kerralla jaetaan viides kortti (river).
+Aiheena on pokeripeli Texas Hold'Em. Pelissä aluksi maksetaan pikku- ja iso-blindi. Tämän jälkeen järjestetään panostuskierros ja jaetaan flop. Nyt on taas panostuskierros, jossa on mahdollista joko katsoa, passata, panostaa tai luovuttaa. Tämän jälkeen jaetaan flop ja turn, joiden välissä ja jälkeen on panostuskierros. Parhaan käden omaava tai viimeinen pelaaja jäljellä voittaa potin.
+
+Pelissä on tavoitteena saada mahdollisimman hyvä käsiyhdistelmä pelaajankorteista sekä pöydälle jaettavista korteista. Pelissä pyritään saamaan enemmän rahaa verrattuna muihin pelaajiin.
+
 # Käyttäjät:
 Pelaaja
 # Kohde:
@@ -30,7 +33,13 @@ VÄRI ja SUORA samanaikaisesti
 VÄRISUORA, mutta kortteina KYMPPI, JÄTKÄ, AKKA, KURKO ja ÄSSÄ.
 
 # Pelaajan toiminnot:
-* panostaa
-* luovuttaa
+* panosta
+* passaa
+* korota
+* katso
+* luovuta
 
-![Luokkakaavio](/dokumentaatio/TexasHoldEmLuokkakaavio.jpg)
+![Luokkakaavio](/dokumentaatio/LuokkakaavioTexasHoldEm.jpg)
+![Luokkakaavio](/dokumentaatio/Sekvenssikaavio1.jpg)
+![Luokkakaavio](/dokumentaatio/Sekvenssikaavio2.jpg)
+

@@ -10,24 +10,25 @@ import texasholdem.model.evaluointi.KasiEvaluointi5Huonointa;
 import texasholdem.model.domain.Kortti.Sijoitus;
 
 /**
- * Luokka evaluoi 5 parasta kättä
+ * Luokka evaluoi 5 parasta kättä.
  */
-
 public class KasiEvaluointi5Parasta {
 
     private Kortti[] kaikkiKortit;
 
-/**
- * Metodille annetaan pöydän kortit sekä pelaajan käsi. Metodi palauttaa parhaan
- * käden mitä näiden korttien yhdistelmästä saa, jos käsi on viiden parhaan joukossa
- * @param  poydanKortit pöydän kortit (5 kpl)
- * @param pelaajanKasi pelaajan kahden kortin käsi
- * @return paras käsi jonka pelaajan korteilla saa yhdistettynä pöydän kortteihin
- * 
- */
-    
+    /**
+     * Metodille annetaan pöydän kortit sekä pelaajan käsi. Metodi palauttaa
+     * parhaan käden mitä näiden korttien yhdistelmästä saa, jos käsi on viiden
+     * parhaan joukossa
+     *
+     * @param poydanKortit pöydän kortit (5 kpl)
+     * @param pelaajanKasi pelaajan kahden kortin käsi
+     * @return paras käsi jonka pelaajan korteilla saa yhdistettynä pöydän
+     * kortteihin
+     *
+     */
     public KasiSijoitus getParasKasi(Kortti[] poydanKortit, Kortti[] pelaajanKasi) {
-        
+
         KasiEvaluointi5Huonointa huonot = new KasiEvaluointi5Huonointa();
 
         if (onKuningasvarisuora(poydanKortit, pelaajanKasi)) {
@@ -42,7 +43,7 @@ public class KasiEvaluointi5Parasta {
             return KasiSijoitus.Väri;
         } else {
             return huonot.getHuonoKasi(poydanKortit, pelaajanKasi);
-        }      
+        }
     }
 
     private Kortti[] kaikkiKortit(Kortti[] poydanKortit, Kortti[] pelaajanKasi) {
@@ -123,16 +124,15 @@ public class KasiEvaluointi5Parasta {
         int kolmosia = 0;
         boolean onKolmoset = false;
         boolean onPari = false;
-        
+
         Sijoitus kortti1;
         Sijoitus kortti2;
         Sijoitus kortti3;
-        
+
         for (int i = 0; i < kaikkiKortit.length - 1; i++) {
             kortti1 = kaikkiKortit[i].getSijoitus();
             kortti2 = kaikkiKortit[i + 1].getSijoitus();
-            
-            
+
             if (kaikkiKortit[i].getSijoitus().getArvo() == kaikkiKortit[i + 1].getSijoitus().getArvo()) {
                 toistojenMaara++;
                 if (toistojenMaara == 3) {
@@ -186,5 +186,18 @@ public class KasiEvaluointi5Parasta {
             return 1;
         }
     };
+
+    /**
+     * Get hai kaikista korteista.
+     *
+     * @param poydanKortit poydan kortit
+     * @param pelaajanKasi pelaajan kortit
+     * @return onko käsi hai
+     */
+    public Kortti getHaiKaikistaKorteista(Kortti[] poydanKortit, Kortti[] pelaajanKasi) {
+        kaikkiKortit(poydanKortit, pelaajanKasi);
+        jarjestaKaikkiKortit();
+        return kaikkiKortit[kaikkiKortit.length - 1];
+    }
 
 }

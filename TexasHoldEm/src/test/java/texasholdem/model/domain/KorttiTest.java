@@ -7,6 +7,9 @@ import texasholdem.model.domain.Kortti.Sijoitus;
 import texasholdem.model.domain.Kortti.Maa;
 
 public class KorttiTest {
+    
+    private Kortti kortti1 = new Kortti(Sijoitus.JÄTKÄ, Maa.HERTTA);
+    private Kortti kortti2 = new Kortti(Sijoitus.AKKA, Maa.HERTTA);
 
     @Test
     public void konstruktoriAsettaaArvotOikein() {
@@ -40,4 +43,18 @@ public class KorttiTest {
         kortti.setMaa(Maa.PATA);
         assertEquals(Maa.PATA, kortti.getMaa());
     }
+    
+    @Test
+    public void getArvoOikein() {
+        Kortti kortti = new Kortti(Sijoitus.JÄTKÄ, Maa.HERTTA);
+        
+        assertEquals(2, kortti.getMaa().getArvo());
+    }
+    
+    @Test
+    public void compToOikein() {
+        
+        assertEquals(kortti1.compareTo(kortti2),kortti1.compareTo(kortti2));
+    }
+    
 }

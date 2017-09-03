@@ -9,21 +9,22 @@ import texasholdem.model.domain.Kortti;
 import texasholdem.model.domain.Kortti;
 
 /**
- * Luokassa evaluooidaan 5 huonointa kättä 10:nestä
+ * Luokassa evaluooidaan 5 huonointa kättä 10:nestä.
  */
-
 public class KasiEvaluointi5Huonointa {
 
     private Kortti[] kaikkiKortit;
-    
- /**
- * Metodille annetaan pöydän kortit sekä pelaajan käsi. Metodi palauttaa parhaan
- * käden mitä näiden korttien yhdistelmästä saa, jos käsi on 5 huonoimman joukossa
- * @param  poydanKortit pöydän kortit (5 kpl)
- * @param pelaajanKasi pelaajan kahden kortin käsi
- * @return paras käsi jonka pelaajan korteilla saa yhdistettynä pöydän kortteihin
- */
 
+    /**
+     * Metodille annetaan pöydän kortit sekä pelaajan käsi. Metodi palauttaa
+     * parhaan käden mitä näiden korttien yhdistelmästä saa, jos käsi on 5
+     * huonoimman joukossa
+     *
+     * @param poydanKortit pöydän kortit (5 kpl)
+     * @param pelaajanKasi pelaajan kahden kortin käsi
+     * @return paras käsi jonka pelaajan korteilla saa yhdistettynä pöydän
+     * kortteihin
+     */
     public KasiSijoitus getHuonoKasi(Kortti[] poydanKortit, Kortti[] pelaajanKasi) {
 
         if (onSuora(poydanKortit, pelaajanKasi)) {
@@ -50,6 +51,13 @@ public class KasiEvaluointi5Huonointa {
         Arrays.sort(kaikkiKortit, sijoituksenMukaan);
     }
 
+    /**
+     * Onko käsi suora.
+     *
+     * @param poydanKortit pöydän kortit
+     * @param pelaajanKasi pelaajan käsi
+     * @return onko suora
+     */
     public boolean onSuora(Kortti[] poydanKortit, Kortti[] pelaajanKasi) {
 
         kaikkiKortit(poydanKortit, pelaajanKasi);
@@ -79,11 +87,12 @@ public class KasiEvaluointi5Huonointa {
     }
 
     private boolean onKolmoset(Kortti[] poydanKortit, Kortti[] pelaajanKasi) {
-        kaikkiKortit(poydanKortit, pelaajanKasi);       
+        kaikkiKortit(poydanKortit, pelaajanKasi);
+        jarjestaKaikkiKortit();
         int samojaKortteja = 1;
         int i = 0;
-        int k = i + 1;
         while (i < kaikkiKortit.length) {
+            int k = i + 1;
             samojaKortteja = 1;
             while (k < kaikkiKortit.length) {
                 if (kaikkiKortit[i].getSijoitus().getArvo() == kaikkiKortit[k].getSijoitus().getArvo()) {
@@ -94,6 +103,7 @@ public class KasiEvaluointi5Huonointa {
                 }
                 k++;
             }
+            k = 0;
             i++;
         }
         return false;
@@ -137,11 +147,13 @@ public class KasiEvaluointi5Huonointa {
 
     private boolean onPari(Kortti[] poydanKortit, Kortti[] pelaajanKasi) {
         kaikkiKortit(poydanKortit, pelaajanKasi);
+        jarjestaKaikkiKortit();
         int cardRepeats = 1;
         boolean onPari = false;
         int i = 0;
-        int k = i + 1;
+
         while (i < kaikkiKortit.length && !onPari) {
+            int k = i + 1;
             cardRepeats = 1;
             while (k < kaikkiKortit.length && !onPari) {
                 if (kaikkiKortit[i].getSijoitus().getArvo() == kaikkiKortit[k].getSijoitus().getArvo()) {
@@ -152,15 +164,10 @@ public class KasiEvaluointi5Huonointa {
                 }
                 k++;
             }
+            k = 0;
             i++;
         }
         return onPari;
-    }
-
-    public Kortti getHaiKaikistaKorteista(Kortti[] poydanKortit, Kortti[] pelaajanKasi) {
-        kaikkiKortit(poydanKortit, pelaajanKasi);
-        jarjestaKaikkiKortit();
-        return kaikkiKortit[kaikkiKortit.length - 1];
     }
 
     private Comparator<Kortti> sijoituksenMukaan = (Kortti left, Kortti right) -> {
